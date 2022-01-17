@@ -463,13 +463,16 @@ class TelnetLayer2:
             self.spkt([],0x18,'fffb01fffc21fffd01fffd03')
         if p.dataofs==5 and 'Padding' in p:
             pass
-        if 'SA' in p[TCP].flags and p.dataofs==8:
-            self.spkt([],0x10)
-        if 'DF' in p.flags:
+        else:
+            if 'SA' in p[TCP].flags and p.dataofs==8:
+                self.spkt([],0x10)
+            if 'DF' in p.flags:
+                self.spkt([],0x10)
+        if p[TCP].flags=='PA':
             self.spkt([],0x10)
         if 'FA' in p[TCP].flags:
             self.spkt([],0x14)
-            self.close()
+            # self.close()
     def _decorator(foo):
         def update(self, options, flags, payload=''):
             self.pkt['TCP'].options = options
@@ -510,9 +513,18 @@ class TelnetLayer2:
         sendp(self.pkt,iface=self.iface,verbose=False)
         time.sleep(0.02)
     def close(self):
-        t.spkt([],0x14)
+        self.spkt([],0x14)
         self.sniff.stop()
         self.data=''
+    def wait(self,prompt,sec):
+        d = ''
+        for i in range(sec):
+            if self.data:
+                d += self.data
+            if prompt in d:
+                return d
+            time.sleep(1)
+        raise Exception('Wait prompt fail')
     def get(self):
         d = self.data
         self.data = ''
@@ -551,7 +563,7 @@ class TelnetLayer2:
 
 # ans, unans = srp(Ether(dst="20:6a:94:57:6e:7b")/ARP(pdst="192.168.100.1"),timeout=2)
 
-# t = TelnetLayer2('98:fa:9b:44:c2:a2','192.168.100.10','bc:3e:07:ea:13:fa','192.168.100.1','乙太網路')
+# t = TelnetLayer2('98:fa:9b:44:c2:a2','192.168.100.10','84:0b:7c:3b:c6:42','192.168.100.1','乙太網路')
 # t1 = TelnetLayer2('98:fa:9b:44:c2:a2','192.168.100.10','fa:1d:0f:b4:8d:d2','192.168.100.1','乙太網路')
 
 # def hello(p):
