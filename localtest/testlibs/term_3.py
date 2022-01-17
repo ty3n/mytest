@@ -360,6 +360,17 @@ class Telnet(Terminal):
         self.tn.write((value+'\n').encode('utf-8'))
         return len(value)
 
+def lWaitCmdTerm(term,cmd,waitstr,sec,count=1):
+    term << cmd
+    data = ''
+    for i in range(sec):
+        time.sleep(1)
+        d = term.get()
+        if d: data += d
+        if waitstr in data:
+            return data
+    raise Exception("failed: %s"%cmd)
+
 '''
 def lWaitCmdTerm(term,cmd,waitstr,sec,count=1):
     termport=term.host
@@ -385,28 +396,6 @@ def isPortConnect(ip,port):
     s.close()
     return result
 '''
-
-def lWaitCmdTerm(term,cmd,waitstr,sec,count=1):
-    for i in range(count):
-        #term<<""
-        term.get() 
-        #time.sleep(0.2)
-        term << cmd
-        data = term.wait("%s"%waitstr,sec)
-        #print data[-1]
-        if "ttyS" in data[-1]:
-            time.sleep(2)
-            term<<""
-            term.get()            
-            #data = term.wait("%s"%promp,sec) 
-            term << "%s"%cmd
-            data = term.wait("%s"%waitstr,sec)
-            #print data[-1]        
-        if waitstr in data[-1]:
-            return data[-1]
-        term<<""
-        term.get()
-    raise Exception("failed: %s"%cmd)
 
 # term=lLogin('192.168.100.1','root','iamgroot')
 
@@ -519,6 +508,7 @@ class TelnetLayer2:
         self.flags = payload
         # self.ans, self.unans = srp(self.pkt,iface='乙太網路',filter='tcp',timeout=1,verbose=False)
         sendp(self.pkt,iface=self.iface,verbose=False)
+        time.sleep(0.02)
     def close(self):
         t.spkt([],0x14)
         self.sniff.stop()
@@ -561,7 +551,7 @@ class TelnetLayer2:
 
 # ans, unans = srp(Ether(dst="20:6a:94:57:6e:7b")/ARP(pdst="192.168.100.1"),timeout=2)
 
-# t = TelnetLayer2('98:fa:9b:44:c2:a2','192.168.100.10','20:6a:94:57:6e:7b','192.168.100.1','乙太網路')
+# t = TelnetLayer2('98:fa:9b:44:c2:a2','192.168.100.10','bc:3e:07:ea:13:fa','192.168.100.1','乙太網路')
 # t1 = TelnetLayer2('98:fa:9b:44:c2:a2','192.168.100.10','fa:1d:0f:b4:8d:d2','192.168.100.1','乙太網路')
 
 # def hello(p):

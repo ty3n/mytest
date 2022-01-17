@@ -14,9 +14,10 @@ m = {}
 success = []
 
 class Monitor(threading.Thread):
-    def __init__(self, c,flows):
+    def __init__(self, c,flows,mac):
         threading.Thread.__init__(self)
         self.term = ''
+        self.mac = mac
         self._id = c[1]
         self.card = Panel.objects.get(pk=self._id)
         self.card._status = 'running'
@@ -61,6 +62,8 @@ class Monitor(threading.Thread):
             self.card._status = 'fail'
             self.card._fail += 1
             self.card.save()
+        finally:
+            self.term.close()
 
 def index(request):
     return render(request = request,
@@ -87,7 +90,8 @@ class Collect(APIView):
         print(request.data['status'], 'clean')
         print(request.data['status']=='clean')
         if request.data['status'] == 'start':
-            m[mCard] = Monitor(mCard,self.flows)
+            success.append(request.data['mac'])
+            m[mCard] = Monitor(mCard,self.flows,request.data['mac'])
             m[mCard].start()
         elif request.data['status'] == 'clean':
             p = Panel.objects.get(pk=mCard[1])

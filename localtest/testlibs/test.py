@@ -3,18 +3,28 @@ from .term_3 import *
 
 def lLogin(m):
     m.msg('Telnet login Start') 
-    m.msg(m.ip)
-    m.term = Telnet('192.168.100.1',m.ip)
+    mac, iface = iface_ip_get_mac('192.168.100.10')
+    dstmac = (':'.join(m.mac[i:i+2] for i in range(0, len(m.mac), 2)))
+    m.msg(mac)
+    m.msg(dstmac)
+    m.term=TelnetLayer2(mac,'192.168.100.10',dstmac,'192.168.100.1',iface)
+    time.sleep(3)
+    m.msg(m.term.get())
+    m.msg(lWaitCmdTerm(m.term,'msoadmin',':',5))
+    m.msg(lWaitCmdTerm(m.term,'password','Menu>',10))
+    m.msg(lWaitCmdTerm(m.term,'doc','sis>',10))
+    m.msg(lWaitCmdTerm(m.term,'ven','sis>',10))
+    m.msg(lWaitCmdTerm(m.term,'dir','sis>',10))
     #term=Telnet(dstip,pid,3)
-    data = m.term.wait("login:",15)[-1]
+    # data = m.term.wait("login:",15)[-1]
     #print '[%s]%s'%(time.ctime(),data)
     #print username
     #print password
-    m.term << 'root'
-    time.sleep(1)
-    m.term << 'iamgroot'
-    time.sleep(1)
-    m.msg(m.term.wait('#',10)[-1])
+    # m.term << 'root'
+    # time.sleep(1)
+    # m.term << 'iamgroot'
+    # time.sleep(1)
+    # m.msg(m.term.wait('#',10)[-1])
 
 def prodshow(m):
     lWaitCmdTerm(m.term,'cli','Menu>',5)
