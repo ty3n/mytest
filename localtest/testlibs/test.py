@@ -32,8 +32,10 @@ def prodshow(m):
     m.msg(lWaitCmdTerm(m.term,'prodshow','tion>',5))
 
 def Test1(m):
-    time.sleep(2)
-    m.msg('Test1')
+    m.msg(lWaitCmdTerm(m.term,'Prod','tion>',10))
+    m.msg(lWaitCmdTerm(m.term,'Cal','tion>',10))
+    m.msg(lWaitCmdTerm(m.term,'Up','tion>',10))
+    m.msg(lWaitCmdTerm(m.term,'print 1','tion>',10))
 
 def Test2(m):
     time.sleep(1)

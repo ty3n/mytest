@@ -46,7 +46,18 @@ INSTALLED_APPS = [
     # 'django.contrib.gis',
     'corsheaders',
     'rest_framework',
+    'rest_framework.authtoken'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',  # <-- And here
+    ],
+}
+
+# python manage.py drf_create_token hitron
+# Generated token 22e1b4009925427ce726ce3be5edc172c0653223 for user hitron
+# curl -X GET "http://hitron:hitron@127.0.0.1:8000/api/arp/" -H "Authorization: token 22e1b4009925427ce726ce3be5edc172c0653223" 
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -9,6 +9,7 @@ import sys, requests
 from django.http import JsonResponse
 import time, json, zipfile
 from scapy.all import *
+from rest_framework.permissions import IsAuthenticated
 # Create your views here.
 m = {}
 success = []
@@ -127,7 +128,9 @@ def arpGetMac(mac,ip,iface):
 #curl -X POST -H "Content-Type: application/json" -d '{"auto" : True}' "http://127.0.0.1:8000/api/arp/"
 
 class Arp(APIView):
+    # permission_classes = (IsAuthenticated,) 
     def __init__(self):
+        IsAuthenticated
         self.ip = '192.168.100.10'
         self.mac, self.iface = iface_ip_get_mac(self.ip)
         self.arp = []

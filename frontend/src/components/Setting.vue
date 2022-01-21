@@ -393,7 +393,7 @@ export default {
     list-style-type: none;
   }
   .backdrop {
-    top: 70px;
+    top: 30px;
     position: fixed;
     background: rgba(0,0,0,0.5);
     width: 100%;
