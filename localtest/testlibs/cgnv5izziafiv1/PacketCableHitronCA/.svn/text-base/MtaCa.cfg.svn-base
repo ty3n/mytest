@@ -1,0 +1,24 @@
+[ ca ]
+default_ca = exampleca
+
+[ exampleca ]
+default_startdate = 200801000000Z
+default_enddate =   400728235959Z
+private_key = MTA_MFG_CA_private.PEM
+certificate = MTA_MFG_CA.PEM
+serial = serial.mac
+default_md = sha1
+database = index.txt
+new_certs_dir = .
+policy = exampleca_policy
+x509_extensions = certificate_extensions
+
+[ exampleca_policy ]
+countryName = supplied
+organizationName = supplied
+organizationalUnitName = supplied
+commonName = supplied
+
+[ certificate_extensions ]
+keyUsage=critical,digitalSignature,keyEncipherment
+authorityKeyIdentifier=keyid

@@ -1,0 +1,8 @@
+Just base64 encode a binary file: 
+
+ openssl base64 -in MFG_CA.der -out MFG_CA.pem
+
+Decode the same file 
+
+ openssl base64 -d -in file.b64 -out file.bin
+

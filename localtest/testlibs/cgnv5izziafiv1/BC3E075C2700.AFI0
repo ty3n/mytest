@@ -1,0 +1,279 @@
+CGNV5-PRO-IZZI test program , Version:2.0 , Station: AFI-T508 ; dut_id:2
+EMP : 00000
+------------------------------------------------------------------------------
+Start Time : Thu Aug 13 17:01:38 2020
+MAC Address : BC3E075C2700
+192.168.100.1 Connected....
+ARM Telnet login
+htx_local:dir
+Last downloaded Filename->CGNV5-6.1.5.0.2b1-MGCP-200716.sbn
+Filename in sector 1->CGNV5-6.1.5.0.2b1-MGCP-200716.sbn
+Filename in sector 2->CGNV5-6.1.5.0.2b1_mfg-MGCP-200813.sbn
+Selected sector is 2
+docsis> 
+Selected sector 2 check pass
+htx_local:show
+
+PACM Production parameter settings
+---------------------------------------------------------------------------------------
+ID            Name                      Value               Return To Default?  Default Value  
+----------------------------------------------------------------------------------------
+ID[000]:   PACM_CONFIG_EURO              0                        False            
+ID[001]:   PACM_CONFIG_MTA_NUM_LINES     2                        False            
+ID[004]:   PACM_CONFIG_IP_ADDR           192.168.1.1              False            
+ID[008]:   PACM_CONFIG_HW_ADDR           BC:3E:07:5C:27:01        False            
+ID[012]:   PACM_CONFIG_MTA_TELE_ID       EASY32002P6CIBB12        False            
+ID[013]:   PACM_CONFIG_MTA_BBU           0                        False            
+ID[014]:   PACM_CONFIG_MTA_NUM_SLIC      1                        False            
+production> 
+Check Pacm Product information PASS
+Switch  Port 0 1000F Long Ping lost : 0 ( <= 20 ) speed: 1000F ( 1000F )
+Switch  Port 1 1000F Long Ping lost : 0 ( <= 20 ) speed: 1000F ( 1000F )
+Switch  Port 2 1000F Long Ping lost : 0 ( <= 20 ) speed: 1000F ( 1000F )
+Switch  Port 3 1000F Long Ping lost : 0 ( <= 20 ) speed: 1000F ( 1000F )
+4Port (1000F) Switch Ping Pass
+Switch  Port 0 100F Long Ping lost : 0 ( <= 20 ) speed: 100F ( 100F )
+Switch  Port 1 100F Long Ping lost : 0 ( <= 20 ) speed: 100F ( 100F )
+Switch  Port 2 100F Long Ping lost : 0 ( <= 20 ) speed: 100F ( 100F )
+Switch  Port 3 100F Long Ping lost : 0 ( <= 20 ) speed: 100F ( 100F )
+4Port (100F) Switch Ping Pass
+Install MAC Adress OK
+Install Serial Number OK
+htx_local:show
+HW Revision                             - <1.66>
+Cable Modem Serial Number               - <252192139619>
+Lan IP                                  - <192.168.100.1>
+Frequency plan                          - <North American>
+Manufacture> 
+Install HW Version 1B OK
+htx_local:wpaKeyset Q1FQZ49W3QHK
+Manufacture> 
+Install Wpakey Q1FQZ49W3QHK OK
+root@intel_ce_linux:~# htx_wls_mac_cmd BC:3E:07:5C:27:00
+
+htx_wls_mac_cmd getAntType
+pro
+root@intel_ce_linux:~# 
+Install Atom mac BC:3E:07:5C:27:00 OK
+lsusb -t
+Bus 002 Device 002: ID 0930:6544
+Bus 001 Device 001: ID 1d6b:0002
+Bus 002 Device 001: ID 1d6b:0002
+Bus 003 Device 001: ID 1d6b:0002
+root@intel_ce_linux:~# 
+mount
+rootfs on / type rootfs (rw)
+/dev/root on / type squashfs (ro,relatime)
+devtmpfs on /dev type devtmpfs (rw,relatime,size=5120k,nr_inodes=29816,mode=755)
+proc on /proc type proc (rw,relatime)
+sysfs on /sys type sysfs (rw,relatime)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,size=5120k,mode=755)
+tmpfs on /var type tmpfs (rw,relatime,size=5120k)
+devpts on /dev/pts type devpts (rw,relatime,gid=5,mode=620)
+tmpfs on /var/volatile/tmp type tmpfs (rw,relatime,size=5120k)
+fusectl on /sys/fs/fuse/connections type fusectl (rw,relatime)
+/dev/sda1 on /var/volatile/tmp/mnt/diska1 type vfat (rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro)
+/dev/mmcblk0p6 on /nvram type ext3 (rw,relatime,errors=continue,user_xattr,acl,barrier=1,data=journal)
+root@intel_ce_linux:~# 
+Check USB Content PASS
+USB2.0 TEST PASS
+insert password PASS
+htx_local:bpiset 192.168.100.28 BC3E075C2700.DualHitron
+Cer file name BC3E075C2700.DualHitron, TFTP server IP 192.168.100.28 
+Received 5129 bytes in 0.0 seconds
+Tftp exited OK
+CableLabDocsisCAStatus: 0
+Set DOCSIS key as default.
+New certificate and keys saved!
+Manufacture> 
+Install BC3E075C2700.DualHitron OK!
+htx_local:getAllCerts 0 BC3E075C2701.der BC3E075C2701_private.der Hitron_PacketCable_CA.509.cer CableLabs_Service_Provider_Root.cer 192.168.100.28 l2sd0.2
+
+------ Get all needed certificates:
+ mta cert: BC3E075C2701.der
+ mta key BC3E075C2701_private.der
+ manufacturer cert: Hitron_PacketCable_CA.509.cer
+ rootCert: CableLabs_Service_Provider_Root.cer
+ Server-IP 192.168.100.28
+ ------
+getting from 192.168.100.28:BC3E075C2701.der to BC3E075C2701.der [octet]
+SIZE set to: 1448
+Received 772 bytes in 0.0 seconds [inf bits/sec]
+getting from 192.168.100.28:BC3E075C2701_private.der to BC3E075C2701_private.der [octet]
+SIZE set to: 1448
+Received 634 bytes in 0.0 seconds [inf bits/sec]
+getting from 192.168.100.28:Hitron_PacketCable_CA.509.cer to Hitron_PacketCable_CA.509.cer [octet]
+SIZE set to: 1448
+Received 976 bytes in 0.0 seconds [inf bits/sec]
+getting from 192.168.100.28:CableLabs_Service_Provider_Root.cer to CableLabs_Service_Provider_Root.cer [octet]
+SIZE set to: 1448
+Received 951 bytes in 0.0 seconds [inf bits/sec]
+certificates> 
+Install BC3E075C2701.cer BC3E075C2701.prv OK
+htx_local:displayCertContent 0 1
+
+ --- Display certificate content Euro = 0 ---
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            42:43:33:45:30:37:35:43:32:37:30:31
+    Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=TW, O=Hitron Technologies, OU=PacketCable, CN=Hitron Technologies PacketCable CA
+        Validity
+            Not Before: Aug  1 00:00:00 2020 GMT
+            Not After : Jul 28 23:59:59 2040 GMT
+        Subject: C=TW, O=Hitron Technologies, OU=PacketCable, CN=BC:3E:07:5C:27:01
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (1024 bit)
+                Modulus:
+                    00:a3:8d:78:2d:81:df:07:
+Check EMta CA start date and have expired date of 20 year PASS (PASS)
+displayCertContent 0 1 pass
+htx_local:displayCertContent 0 2
+
+ --- Display certificate content Euro = 0 ---
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            37:fc:89:63:b7:74:c2:2b:50:46:19:de:7b:c7:0c
+    Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=US, O=CableLabs, OU=PacketCable, CN=PacketCable Root Device Certificate Authority
+        Validity
+            Not Before: May 13 00:00:00 2005 GMT
+            Not After : May 12 23:59:59 2025 GMT
+        Subject: C=TW, O=Hitron Technologies, OU=PacketCable, CN=Hitron Technologies PacketCable CA
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                 
+displayCertContent 0 2 pass
+htx_local:displayCertContent 0 3
+
+ --- Display certificate content Euro = 0 ---
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 2 (0x2)
+    Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=US, O=CableLabs, CN=CableLabs Service Provider Root CA
+        Validity
+            Not Before: Feb 18 19:26:29 2003 GMT
+            Not After : Feb 18 19:26:29 2033 GMT
+        Subject: C=US, O=CableLabs, CN=CableLabs Service Provider Root CA
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:a1:e3:51:b5:6c:46:82:7e:66:b8:5f:f2:f3:f2:
+                    d7:56:2b:3c:2b:64:a4:ab:08:ce:3c:
+displayCertContent 0 3 pass
+Freq=5.1 measure=37.56 (34.86 ~ 39.72)
+Freq=10.0 measure=37.80 (35.01 ~ 39.99)
+Freq=15.0 measure=38.00 (35.13 ~ 40.08)
+Freq=20.0 measure=37.75 (35.20 ~ 40.14)
+Freq=25.0 measure=37.32 (34.69 ~ 39.61)
+Freq=30.0 measure=36.41 (34.02 ~ 38.91)
+Freq=35.0 measure=35.92 (33.92 ~ 39.16)
+Freq=40.0 measure=37.12 (34.43 ~ 39.45)
+Freq=50.0 measure=36.25 (33.39 ~ 38.77)
+Freq=55.0 measure=36.50 (33.82 ~ 38.92)
+Freq=60.0 measure=35.49 (33.00 ~ 38.28)
+Freq=65.0 measure=35.00 (32.48 ~ 38.44)
+Freq=70.0 measure=35.10 (32.33 ~ 38.01)
+Freq=75.0 measure=33.26 (30.58 ~ 37.41)
+Freq=80.0 measure=34.45 (31.66 ~ 37.78)
+Freq=83.0 measure=32.39 (29.72 ~ 36.37)
+Freq=84.9 measure=31.46 (28.73 ~ 35.98)
+US Calibration Test Pass
+CB SN : 281144000526	coarse: 0	fine: 9
+freqs : 108 132 156 180 204 228 252 276 300 324 348 372 396 420 444 468 492 516 540 564 588 612 636 660 684 708 732 756 780 804 828 852 876 900 924 948 972 996 1000 
+powers: 18.74 18.36 17.23 16.19 16.24 16.90 17.32 16.49 15.00 15.03 15.94 16.87 16.14 14.77 14.10 14.59 15.82 16.31 14.98 13.70 13.96 15.07 15.92 15.52 14.22 13.62 13.47 15.71 15.54 14.78 14.76 14.97 15.12 14.30 13.55 13.20 13.20 13.46 13.25 
+Segment:0 c0= 0 (-200 ~ 200)
+Segment:1 c0= 288 (73 ~ 474)
+Segment:2 c0= 404 (257 ~ 572)
+Segment:3 c0= 377 (261 ~ 544)
+Segment:4 c0= 438 (303 ~ 613)
+Segment:5 c0= 412 (244 ~ 569)
+Segment:6 c0= 462 (288 ~ 661)
+Segment:7 c0= 296 (5 ~ 754)
+Segment:0 c0= 0 (-200 ~ 200)
+Segment:1 c0= 288 (73 ~ 474)
+Segment:2 c0= 404 (257 ~ 572)
+Segment:3 c0= 377 (261 ~ 544)
+Segment:4 c0= 438 (303 ~ 613)
+Segment:5 c0= 412 (244 ~ 569)
+Segment:6 c0= 462 (288 ~ 661)
+Segment:7 c0= 296 (5 ~ 754)
+Segment:0 c0= 0 (-200 ~ 200)
+Segment:1 c0= -1217 (-1342 ~ -1093)
+Segment:2 c0= -1010 (-1168 ~ -859)
+Segment:3 c0= -745 (-893 ~ -592)
+Segment:4 c0= -483 (-642 ~ -323)
+Segment:5 c0= -347 (-522 ~ -199)
+Segment:6 c0= -140 (-320 ~ 62)
+Segment:7 c0= -147 (-439 ~ 330)
+
+WPS Button Test Pass
+Reset Button Test Pass
+iwconfig wlan0
+wlan0     802.11bgn  ESSID:"HITRON-2700"  
+          Mode:Master  Frequency=2.432 GHz  Access Point: 74:9B:E8:65:21:56   
+          Tx-Power=27 dBm   
+          Retry  long limit:7   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Link Quality=0/5  Signal level:0 dBm  Noise level=-84 dBm
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+root@intel_ce_linux:~# 
+iwconfig wlan2
+wlan2     802.11anac  ESSID:"HITRON5G-2700"  
+          Mode:Master  Frequency=5.22 GHz  Access Point: 74:9B:E8:65:21:57   
+          Tx-Power=31 dBm   
+          Retry  long limit:7   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Link Quality=0/5  Signal level:0 dBm  Noise level=-86 dBm
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+root@intel_ce_linux:~# 
+2g_channel=9
+br-lan: port 2(wlan0) entered forwarding state
+iwconfig wlan0
+wlan0     802.11bgn  ESSID:"HITRON-2700"  
+          Mode:Master  Frequency=2.452 GHz  Access Point: 74:9B:E8:65:21:56   
+          Tx-Power=27 dBm   
+          Retry  long limit:7   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Link Quality=0/5  Signal level:0 dBm  Noise level=-89 dBm
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+root@intel_ce_linux:~# 
+iwconfig wlan2
+wlan2     802.11anac  ESSID:"HITRON5G-2700"  
+          Mode:Master  Frequency=5.22 GHz  Access Point: 74:9B:E8:65:21:57   
+          Tx-Power=31 dBm   
+          Retry  long limit:7   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Link Quality=0/5  Signal level:0 dBm  Noise level=-88 dBm
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+root@intel_ce_linux:~# 
+total_time_cost=47sec
+Wifi Setting PASS
+MAC BC3E075C2700 (BC3E075C2700) comparison of pass
+Check Ether 1000F and ALL ON,WPS Red pass
+Check Ether 100F LED ON Pass
+Turn to GA mode Pass
+htx_local:bootfrom 1
+Sector changed to 1
+docsis> 
+End Time : Thu Aug 13 17:05:22 2020
+Total Time : 224.358999968
+Test Result:PASS

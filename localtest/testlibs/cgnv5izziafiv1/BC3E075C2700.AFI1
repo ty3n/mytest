@@ -1,0 +1,210 @@
+CGNV5-PRO-IZZI test program , Version:2.0 , Station: AFI-T106 ; dut_id:2
+EMP : 00000
+------------------------------------------------------------------------------
+Start Time : Thu Aug 13 18:43:58 2020
+MAC Address : BC3E075C2700
+192.168.0.1 Connected....
+
+CM Operational OK
+
+ARM Telnet login
+htx_local:dir
+Last downloaded Filename->CGNV5-6.1.5.0.2b1-MGCP-200716.sbn
+Filename in sector 1->CGNV5-6.1.5.0.2b1-MGCP-200716.sbn
+Filename in sector 2->CGNV5-6.1.5.0.2b1_mfg-MGCP-200813.sbn
+Selected sector is 1
+docsis> 
+Selected sector 1 check pass
+Loop Current mode line 0 LENTHohm state min boost (mA): 20.32 (14.45 ~ 24.45)
+Check line 0 Hook Status: offHook status Pass
+Loop Current mode line 1 LENTHohm state min boost (mA): 20.99 (14.45 ~ 24.45)
+Check line 1 Hook Status: offHook status Pass
+DTMF line 0: 8 (8)
+DTMF line 1: 9 (9)
+Dtmf Pass
+Loop Current mode line 0 LENTHohm state max boost (mA): 19.32 (13.70 ~ 23.70)
+Check line 0 Hook Status: onHook status Pass
+Loop Current mode line 1 LENTHohm state max boost (mA): 19.44 (13.70 ~ 23.70)
+Check line 1 Hook Status: onHook status Pass
+Idle Voltage mode line 0 (V): 46.67 (42.00 ~ 52.00)
+Idle Voltage mode line 1 (V): 48.92 (42.00 ~ 52.00)
+Ring source mode line 0 time(ms): 39.73 (37.00 ~ 43.00)
+Ring source mode line 0 1REN voltage(V): 68.92 (59.00 ~ 79.00)
+Ring source mode line 0 5REN voltage(V): 65.13 (54.00 ~ 74.00)
+Ring source mode line 1 time(ms): 40.14 (37.00 ~ 43.00)
+Ring source mode line 1 1REN voltage(V): 75.45 (59.00 ~ 79.00)
+Ring source mode line 1 5REN voltage(V): 66.23 (54.00 ~ 74.00)
+total_time_cost=52sec
+Voice Test Pass
+htx_local:cmcert
+Version 3 certificate
+Serial Number (12 bytes):
+ 42 43 33 45 30 37 35 43 32 37 30 30                  [BC3E075C2700]
+Issuer Name
+********************
+ ORG Name : Hitron Technologies
+ COMMUNITY NAME : TW
+ COMMON NAME : Hitron Technologies Cable Modem Root Certificate Authority
+ ORG UNIT : DOCSIS
+Validity Start
+Aug  1 00:00:00 2020 GMT
+Validity End
+Jul 28 23:59:59 2040 GMT
+Subject Name
+********************
+ ORG Name : Hitron Technologies
+ COMMUNITY NAME : TW
+ COMMON NAME : BC:3E:07:5C:27:00
+ ORG UNIT : No. 40, Wu-kung 5th Rd., Wu-ku, Taipei Hsien, Taiwan
+Public Key BER (162 bytes):
+ 30 81 9f 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01      [0..0...*.H......]
+ 05 00 03 81 8d 00 30 81 89 02 81 81 00 ce b3 a5      [......0.........]
+ 19 75 d8 07 99 b4 ed 64 eb bc 73 33 1e 94 61 61      [.u.....d..s3..aa]
+ d7 0f 5b 6f 5c 73 2e 65 c3 99 c8 7a de 93 36 92      [..[o\s.e...z..6.]
+ 5d 57 76 2d cc 6c 66 60 f6 ed 52 91 ae c2 24 f2      []Wv-.lf`..R...$.]
+ b8 c0 7b 59 3d ca 91 e8 9b 82 45 bb ad 68 36 68      [..{Y=.....E..h6h]
+ 14 4d 54 47 ff a5 86 92 07 8a d0 36 5a 01 7c df      [.MTG.......6Z.|.]
+ 15 7b 15 89 71 15 b6 f2 48 c2 07 ff 5a 8a 81 65      [.{..q...H...Z..e]
+ 75 b0 52 3d f6 4a b1 85 c7 6e e3 59 e6 60 e1 82      [u.R=.J...n.Y.`..]
+ 1f f5 01 f9 37 f3 89 89 7a ea 17 b2 a5 02 03 01      [....7...z.......]
+ 00 01                                                [..]
+Certification> 
+Check Certificate BC3E075C2700: PASS (PASS)
+Check CA start date and have expired date of 20 year PASS (PASS)
+Cable Modem Serial Number: 252192139619 (252192139619)
+Cable Modem MAC: BC-3E-07-5C-27-00 (BC-3E-07-5C-27-00)
+Lan MAC: BC-3E-07-5C-27-02 (BC-3E-07-5C-27-02)
+Check wpakey Q1FQZ49W3QHK digit OK!
+htx_local:prodsh
+Major HW Revision                       - <1>
+Minor HW Revision                       - <B>
+Cable Modem Serial Number               - <252192139619>
+MTA Enable Flag                         - <True>
+Cable Modem Mfg Organization name       - <Hitron Technologies>
+Cable Modem Mfg CVC Access start time   - <700101000000Z>
+Cable Modem Mfg Code Access start time  - <700101000000Z>
+Cable Modem Sector 1 file name          - <CGNV5-6.1.5.0.2b1-MGCP-200716.sbn>
+Cable Modem Sector 2 file name          - <CGNV5-6.1.5.0.2b1_mfg-MGCP-200813.sbn>
+Cable Modem Last Download file name     - <CGNV5-6.1.5.0.2b1-MGCP-200716.sbn>
+Lan IP                                  - <192.168.100.1>
+Host IP                                 - <192.168.100.2>
+IP Mask                                 - <255.255.255.0>
+Interface name                          - <lan0>
+Cable Modem MAC                         - <BC-3E-07-5C-27-00>
+Lan MAC                                 - <BC-3E-07-5C-27-02>
+L2 Switch MAC                           - <78-8D-F7-26-46-63>
+Baud rate                               - <115200>
+PGA type                                - <MXL231>
+TOP table                               - <UNKNOWN>
+Frequency plan                          - <North American>
+
+Board configuration                     - <16 - BOARD_CONFIG_PUMA6_MG_24DS_MXL267>
+Number of tuners                        - <1>
+Number of Receivers                     - <24>
+Tuners parameters:
+------------------
+Tuner number [1]:
+        Tuner model                     - <MXL267_TUNER_TYPE>
+        Tuner I2C is connected to       - <Master>
+        Tuner I2C address               - <0>
+        Connected receivers are         - <1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 >
+US DAC mode                             - <US DAC EXTERNAL>
+US frequency range mode                 - <US FREQ RANGE EXT 5-85MHz>
+Puma6 HSIF connectivity                 - <HSIF TO TUNER NO CROSS  >
+Extended US Power                       - <216> [in quarter DB]
+SSWDL operational mode                  - <SSWDL AFTER OPERATIONAL>
+Production> 
+Check Product information PASS
+htx_local:ven
+---------Current Vendor Information----------
+Model Name: CGNV5
+Vendor Name: Hitron Technologies
+IMAGE ID: 00152240
+Serial Number: 252192139619
+
+------------Version Information--------------
+Hardware Version: 1B
+Software Version: 6.1.5.0.2b1-MGCP
+S/W Build Date: Jul 16 2020/20:32:14
+Bootloader Version:CGNV5-1.7.2-g749261d3-dirty
+
+------------Intreface Information------------
+RF MAC Address: BC:3E:07:5C:27:00
+LAN MAC Address:BC:3E:07:5C:27:02
+Modem LAN IP: 192.168.100.1
+Modem LAN MASK: 255.255.255.0
+
+-------------Daemon Information--------------
+SSH Daemon: LAN(Online) on, LAN(Offline) on, CABLE on
+Telnet Daemon: LAN(Online) on, LAN(Offline) on, CABLE on
+HTTP Daemon: LAN(Online) on, LAN(Offline) on, CABLE on
+DHCP Daemon: on
+
+------------Capability Information-----------
+PP Control: enable
+TurboDox Control: enable
+D10 SW DL Mode: disable
+docsis> 
+Check Vendor information PASS
+Snmp get SerialNumber: 252192139619 (252192139619)
+Snmp get Macaddress: BC3E075C2700 (BC3E075C2700)
+DOCSIS Version:      DOCSIS 3.0 Cable Modem Router
+Hardware Version:    1B
+Vendor:              Hitron Technologies
+BootLoader Version:  CGNV5-1.7.2-g749261d3-dirty
+Software Version:    6.1.5.0.2b1-MGCP
+Model Name:          CGNV5
+SNMP sysDescr check pass
+24 DS Channel Lock Check: PASS (PASS)
+8 US Channel Lock Check: PASS (PASS)
+Channel 1 MSE: 43.38 ( > 35.00)
+Channel 1 CMTS Measure= 0.76
+Channel 1 DSPower = 0.30
+Channel 1 DSpower  Diff: -0.46 (-2.50 ~ 2.50)
+Channel 2 MSE: 43.38 ( > 35.00)
+Channel 2 CMTS Measure= 0.31
+Channel 2 DSPower = 0.80
+Channel 2 DSpower  Diff: 0.49 (-2.50 ~ 2.50)
+Channel 3 MSE: 43.38 ( > 35.00)
+Channel 3 CMTS Measure= 0.15
+Channel 3 DSPower = 0.70
+Channel 3 DSpower  Diff: 0.55 (-2.50 ~ 2.50)
+Channel 4 MSE: 44.63 ( > 35.00)
+Channel 4 CMTS Measure= 0.23
+Channel 4 DSPower = 0.80
+Channel 4 DSpower  Diff: 0.57 (-2.50 ~ 2.50)
+Check DS/MSE value pass
+US Freq = 31 MHz, DUT_uspower = 40.25,CMTS_uspower = 40.00, diff = 0.25(-2.00 ~ 2.00)
+US Freq = 38 MHz, DUT_uspower = 40.25,CMTS_uspower = 40.00, diff = 0.25(-2.00 ~ 2.00)
+US Freq = 25 MHz, DUT_uspower = 40.25,CMTS_uspower = 40.00, diff = 0.25(-2.00 ~ 2.00)
+US Freq = 18 MHz, DUT_uspower = 40.25,CMTS_uspower = 40.00, diff = 0.25(-2.00 ~ 2.00)
+Channl 0 CW Error Rate: 0.00e+000 ( < 1.00e-009)
+Channl 1 CW Error Rate: 0.00e+000 ( < 1.00e-009)
+Channl 2 CW Error Rate: 0.00e+000 ( < 1.00e-009)
+Channl 3 CW Error Rate: 0.00e+000 ( < 1.00e-009)
+htx_local:iwconfig wlan0
+wlan0     802.11bgn  ESSID:"HITRON-2700"  
+          Mode:Master  Frequency=2.452 GHz  Access Point: BC:3E:07:5C:27:06   
+          Tx-Power=27 dBm   
+          Retry  long limit:7   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Link Quality=0/5  Signal level:0 dBm  Noise level=-90 dBm
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+# 
+htx_local:iwconfig wlan2
+wlan2     802.11anac  ESSID:"HITRON5G-2700"  
+          Mode:Master  Frequency=5.22 GHz  Access Point: BC:3E:07:5C:27:07   
+          Tx-Power=31 dBm   
+          Retry  long limit:7   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Link Quality=0/5  Signal level:0 dBm  Noise level=-87 dBm
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:0  Invalid misc:0   Missed beacon:0
+
+# 
+Check LED ALL ON pass
+End Time : Thu Aug 13 18:45:50 2020
+Total Time : 112.523000002
+Test Result:PASS

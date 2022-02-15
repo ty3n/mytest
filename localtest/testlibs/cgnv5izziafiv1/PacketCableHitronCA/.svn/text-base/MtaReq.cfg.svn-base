@@ -1,0 +1,16 @@
+[ req ]
+default_bits           = 1024
+prompt                 = 0
+default_keyfile        = key.tmp
+distinguished_name     = req_distinguished_name
+
+
+[ req_distinguished_name ]
+C                      = Country
+C_value                = TW
+O                      = Company
+O_value                = Hitron Technologies
+OU                     = Location
+OU_value               = PacketCable
+CN                     = MAC address
+CN_value               = BC:3E:07:5C:27:01

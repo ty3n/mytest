@@ -2,7 +2,7 @@ import time
 from .term_3 import *
 
 def lLogin(m):
-    m.msg('Telnet login Start') 
+    m.msg('Telnet login Start')
     mac, iface = iface_ip_get_mac('192.168.100.10')
     dstmac = (':'.join(m.mac[i:i+2] for i in range(0, len(m.mac), 2)))
     m.msg(mac)

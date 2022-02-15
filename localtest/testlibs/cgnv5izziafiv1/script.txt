@@ -1,0 +1,103 @@
+# cat /etc/versions
+IMAGE_NAME=HUB4_6.1.1.2-IMS-NOS-Sec-T7-MFG-180629_3cb17365e_ubfi.bin
+VERSION=6.1.1.2
+FSSTAMP=20180629181018
+# cd /var/tmp/
+#
+# echo P9KpH3dG >in.txt
+#
+# openssl enc -e -AES-256-ECB -K EBEBD739001462C01C8BD4A76F1B7028 -in in.txt -out out.txt -p
+salt=0000000000000000
+key=EBEBD739001462C01C8BD4A76F1B702800000000000000000000000000000000
+#
+# hexdump out.txt
+0000000 2dd4 230a d97e 2e96 67d8 6156 10a6 a77a
+0000010
+#
+#
+# hexdump out.txt
+0000000 2dd4 230a d97e 2e96 67d8 6156 10a6 a77a
+0000010
+#
+
+
+
+
+>>> a=''.join(data.split('0000000')[-1].split("0000010")[0].strip().split())
+>>> a
+'2dd4230ad97e2e9667d8615610a6a77a'
+>>> 
+>>> len(a)
+32
+>>> 
+
+
+
+
+
+# cd /
+#
+#
+#
+# ls
+vop      var      sys      sbin     nvram    lib      fss      dev
+var.tar  usr      share    proc     man      include  etc      bin
+# echo HK4qnPMQ>/var/tmp/in.txt
+# ls /var/tmp/in.txt
+/var/tmp/in.txt
+#
+#
+#
+# cd /var/tmp/
+# echo HK4qnPMQ>/var/tmp/in.txt
+#
+
+# openssl enc -e -AES-256-ECB -K EBEBD739001462C01C8BD4A76F1B7028 -in /var/tmp/in.txt -out /var/tmp/out.txt -p
+
+#hexdump /var/tmp/out.txt
+
+
+#rm /var/tmp/out.txt
+
+#rm /var/tmp/in.txt
+
+>>> os.popen('C:\\aaaa\\OpenSSL-Win32\\bin\\NOS_AES_256_ECB.exe HK4qnPMQ').read()[:-1]
+'2dd4230ad97e2e9667d8615610a6a77a'
+>>> a=os.popen('C:\\aaaa\\OpenSSL-Win32\\bin\\NOS_AES_256_ECB.exe HK4qnPMQ').read()[:-1]
+>>> a
+'2dd4230ad97e2e9667d8615610a6a77a'
+>>>
+
+
+
+C:\aaaa\OpenSSL-Win32\bin>
+C:\aaaa\OpenSSL-Win32\bin>
+C:\aaaa\OpenSSL-Win32\bin>
+C:\aaaa\OpenSSL-Win32\bin>
+C:\aaaa\OpenSSL-Win32\bin>
+C:\aaaa\OpenSSL-Win32\bin>c:\TermScript\TermPy.exe -i
+Auto Test Script Executant v2.7 ; Python v2.7.2
+>>>
+>>>
+>>> os.popen('C:\\aaaa\\OpenSSL-Win32\\bin\\NOS_AES_256_ECB.exe HK4qnPMQ').read()[:-1]
+'2dd4230ad97e2e9667d8615610a6a77a'
+>>>
+
+
+
+
+
+
+>>> with open('C:\\aaaa\\OpenSSL-Win32\\bin\\out.txt','rb') as f:
+	b = f.read()
+	f.close()
+	print b.encode('hex')
+
+	
+ad03d75075b835838edcd0b73e107903
+>>> 
+>>> 
+
+
+os.startfile('C:\\aaaa\\CT006\\built_hex.bat')
+
